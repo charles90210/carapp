@@ -1,0 +1,41 @@
+<h1>Car Status Page</h1>
+car make: <%= @car.make %>
+<br/>
+car model year: <%= @car.model_year %>
+<br/>
+car speed: <%= @car.speed %>
+<br/>
+car parking brake: <%= @car.parking_brake %>
+<br/>
+car lights: <%= @car.lights %>
+<br/>
+<form method="get" action="/car/accelerate" >
+ <input type="submit" value="accelerate"/>
+</form>
+<br/>
+
+<form method="get" action="/car/brake" >
+ <input type="submit" value="brake"/>
+</form>
+<br/>
+
+<form method="get" action="/car/toggle_lights" >
+ <input type="submit" value="toggle_lights"/>
+</form>
+<br/>
+
+<!-- <form method="get" action="/car/set_parking_brake" >
+  <label>Parking Brake</label>
+  <br/>
+ <input type="radio" name="parking_brake" value="true"/>On
+ <input type="radio" name="parking_brake" value="false"/>Off
+</form>
+<br/> -->
+
+<form method="get" action="/car/set_parking_brake">
+  Off
+  <%= radio_button_tag 'parking_brake', 'off' %>
+  On
+  <%= radio_button_tag 'parking_brake', 'off' %>
+  <input type="submit" value="Update Parking Brake"/>
+</form>
